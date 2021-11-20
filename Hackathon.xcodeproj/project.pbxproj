@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55048057274952820045FAE3 /* SignModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 55048056274952820045FAE3 /* SignModel.mlmodel */; };
+		55048059274954420045FAE3 /* AtomicInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55048058274954420045FAE3 /* AtomicInteger.swift */; };
 		55F4DB252748A97E001C400B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4DB242748A97E001C400B /* AppDelegate.swift */; };
 		55F4DB272748A97E001C400B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4DB262748A97E001C400B /* SceneDelegate.swift */; };
 		55F4DB292748A97E001C400B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4DB282748A97E001C400B /* ViewController.swift */; };
@@ -18,7 +20,6 @@
 		55F4DB4B2748A97F001C400B /* HackathonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4DB4A2748A97F001C400B /* HackathonUITestsLaunchTests.swift */; };
 		55F4DB592748B743001C400B /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4DB582748B743001C400B /* Sign.swift */; };
 		55F4DB5B2748C524001C400B /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4DB5A2748C524001C400B /* ResultsView.swift */; };
-		55F4DB652748FF45001C400B /* SignModel.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 55F4DB642748FF45001C400B /* SignModel.mlpackage */; };
 		55F4DB682749000F001C400B /* SignImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F4DB672749000F001C400B /* SignImages.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		55048056274952820045FAE3 /* SignModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SignModel.mlmodel; sourceTree = "<group>"; };
+		55048058274954420045FAE3 /* AtomicInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomicInteger.swift; sourceTree = "<group>"; };
 		55F4DB212748A97E001C400B /* Hackathon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hackathon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F4DB242748A97E001C400B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55F4DB262748A97E001C400B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +59,6 @@
 		55F4DB572748AA49001C400B /* Hackathon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hackathon.entitlements; sourceTree = "<group>"; };
 		55F4DB582748B743001C400B /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
 		55F4DB5A2748C524001C400B /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
-		55F4DB642748FF45001C400B /* SignModel.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = SignModel.mlpackage; sourceTree = "<group>"; };
 		55F4DB672749000F001C400B /* SignImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SignImages.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,10 +118,11 @@
 				55F4DB302748A97F001C400B /* Assets.xcassets */,
 				55F4DB322748A97F001C400B /* LaunchScreen.storyboard */,
 				55F4DB352748A97F001C400B /* Info.plist */,
-				55F4DB642748FF45001C400B /* SignModel.mlpackage */,
 				55F4DB582748B743001C400B /* Sign.swift */,
 				55F4DB5A2748C524001C400B /* ResultsView.swift */,
+				55048056274952820045FAE3 /* SignModel.mlmodel */,
 				55F4DB672749000F001C400B /* SignImages.xcassets */,
+				55048058274954420045FAE3 /* AtomicInteger.swift */,
 			);
 			path = Hackathon;
 			sourceTree = "<group>";
@@ -273,9 +276,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55048059274954420045FAE3 /* AtomicInteger.swift in Sources */,
+				55048057274952820045FAE3 /* SignModel.mlmodel in Sources */,
 				55F4DB292748A97E001C400B /* ViewController.swift in Sources */,
 				55F4DB5B2748C524001C400B /* ResultsView.swift in Sources */,
-				55F4DB652748FF45001C400B /* SignModel.mlpackage in Sources */,
 				55F4DB592748B743001C400B /* Sign.swift in Sources */,
 				55F4DB252748A97E001C400B /* AppDelegate.swift in Sources */,
 				55F4DB272748A97E001C400B /* SceneDelegate.swift in Sources */,

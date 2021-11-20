@@ -3,4 +3,54 @@
    uuid = "514E7193-9F0D-4D6F-849C-2CE0A79609D3"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "094D4C6E-5543-4DC0-887E-BE0A9968A75F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Hackathon/ResultsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "094D4C6E-5543-4DC0-887E-BE0A9968A75F - dbb0db15b3c56777"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Hackathon.ResultsView.viewDidLoad() -&gt; ()"
+                  moduleName = "Hackathon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gamerman/Desktop/Hackathon/Hackathon/ResultsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "716">
+               </Location>
+               <Location
+                  uuid = "094D4C6E-5543-4DC0-887E-BE0A9968A75F - 823945fae85439e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #4 () -&gt; () in implicit closure #3 (Hackathon.ResultsView) -&gt; () -&gt; () in Hackathon.ResultsView.viewDidLoad() -&gt; ()"
+                  moduleName = "Hackathon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gamerman/Desktop/Hackathon/Hackathon/ResultsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -31,7 +31,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCapture
     // Stuff for the AI data
     var imageToShow: UIImage!
     var resultsToSend: [VNClassificationObservation]!
-    static var resultsAreOpen: Bool! = false
+    static var resultsAreOpen: AtomicInteger! = AtomicInteger()
 
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,6 +51,10 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCapture
         }
     }
 
+    override func viewDidLoad() {
+        ViewController.resultsAreOpen.set(0)
+    }
+    
     // Setup auto capturing
     private func addVideoOutput() {
         self.videoOutput.videoSettings = [(kCVPixelBufferPixelFormatTypeKey as NSString) : NSNumber(value: kCVPixelFormatType_32BGRA)] as [String : Any]
@@ -68,7 +72,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCapture
     
     // Auto capture video event loop
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-        if(!ViewController.resultsAreOpen){
+        if(!(ViewController.resultsAreOpen.get() > 0)){
             guard CMSampleBufferGetImageBuffer(sampleBuffer) != nil else {
                 print("unable to get image from sample buffer")
                 return
@@ -97,9 +101,12 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCapture
 
     
     @IBAction func buttonPressed(_ sender: Any) {
-        let photoCaptureSettings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
-        if stillImageOutput != nil {
-            stillImageOutput.capturePhoto(with: photoCaptureSettings, delegate: self)
+        if(!(ViewController.resultsAreOpen.get() > 0)) {
+            ViewController.resultsAreOpen.set(ViewController.resultsAreOpen.get() + 1)
+            let photoCaptureSettings = AVCapturePhotoSettings(format: [AVVideoCodecKey: AVVideoCodecType.jpeg])
+            if stillImageOutput != nil {
+                stillImageOutput.capturePhoto(with: photoCaptureSettings, delegate: self)
+            }
         }
     }
     
@@ -180,10 +187,17 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCapture
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Result
         if segue.destination is ResultsView {
-            ViewController.resultsAreOpen = true
-            let vc = segue.destination as? ResultsView
-            vc?.image = imageToShow
-            vc?.results = resultsToSend
+                if(!(ViewController.resultsAreOpen.get() > 1)) {
+                    let vc = segue.destination as? ResultsView
+                    vc?.image = imageToShow
+                    vc?.results = resultsToSend
+                    vc?.quit = false
+                } else {
+                    let vc = segue.destination as? ResultsView
+                    vc?.image = imageToShow
+                    vc?.results = resultsToSend
+                    vc?.quit = true
+            }
         }
         //super.prepare(for: segue, sender: sender)
     }
@@ -198,26 +212,29 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCapture
     
     func autoAnalyzeImage(uiImage: UIImage) {
         // Analyze the image
-        guard let model = try? VNCoreMLModel(for: SignModel().model)
-        else {return}
-        let request = VNCoreMLRequest(model: model)
-        { [self](finishedRequest, error) in
-            guard let results = finishedRequest.results as?
-                    [VNClassificationObservation] else {return}
+        if(!(ViewController.resultsAreOpen.get() > 0)){
+            guard let model = try? VNCoreMLModel(for: SignModel().model)
+            else {return}
+            let request = VNCoreMLRequest(model: model)
+            { [self](finishedRequest, error) in
+                guard let results = finishedRequest.results as?
+                        [VNClassificationObservation] else {return}
 
-            // Show results if confidence is greater than 80%
-            guard let firstObservation = results.first else {return}
-            if(firstObservation.confidence > 0.8) {
-                imageToShow = uiImage
-                resultsToSend = results
-                DispatchQueue.main.async {
-                    performSegue(withIdentifier: "PresentResult", sender: self)
+                // Show results if confidence is greater than 80%
+                guard let firstObservation = results.first else {return}
+                if(firstObservation.confidence > 0.8) {
+                    ViewController.resultsAreOpen.set(ViewController.resultsAreOpen.get() + 1)
+                    imageToShow = uiImage
+                    resultsToSend = results
+                    DispatchQueue.main.async {
+                        performSegue(withIdentifier: "PresentResult", sender: self)
+                    }
                 }
+                
             }
+            try? VNImageRequestHandler(cgImage: (uiImage.cgImage)!, options: [:]).perform([request])
             
         }
-
-        try? VNImageRequestHandler(cgImage: (uiImage.cgImage)!, options: [:]).perform([request])
     }
     
     // Function to run the AI on the image

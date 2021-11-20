@@ -13,9 +13,17 @@ class ResultsView: UIViewController {
     // Variables
 	var image: UIImage!
 	var results: [VNClassificationObservation]!
+    var quit: Bool!
    
+    func done() {
+        ViewController.resultsAreOpen.set(ViewController.resultsAreOpen.get() - 1)
+    }
+    
 	// Overrides
 	override func viewDidLoad() {
+        if(quit || ViewController.resultsAreOpen.get() > 1) {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
 		guard let firstObservation = results.first else {return}
         
 		// Confidence at least 60%
@@ -23,7 +31,7 @@ class ResultsView: UIViewController {
             let foundSign = Sign.findSign(id: String(firstObservation.identifier))
 
             photoView.image = UIImage(named: foundSign.id)
-			resultLabel.text = foundSign.title + " - " + String(firstObservation.confidence * 100).prefix(2) + "%"
+			resultLabel.text = foundSign.title + " - " + String(firstObservation.confidence * 100).split(separator: ".")[0] + "%"
 			descriptionTextView.text = foundSign.description
             
             sliderBarConstraint.constant = dangerBar.frame.size.width * CGFloat(foundSign.danger) / 3.0 +  dangerBar.frame.size.width / 6.0
@@ -35,6 +43,6 @@ class ResultsView: UIViewController {
 	}
     
     override func viewDidDisappear(_ animated: Bool) {
-        ViewController.resultsAreOpen = false
+        ViewController.resultsAreOpen.set(ViewController.resultsAreOpen.get() - 1)
     }
 }
