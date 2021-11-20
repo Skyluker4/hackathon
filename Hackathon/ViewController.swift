@@ -226,7 +226,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCapture
 
                 // Show results if confidence is greater than 80%
                 guard let firstObservation = results.first else {return}
-                if(firstObservation.confidence > 0.8) {
+                if(firstObservation.confidence > 0.9) {
                     ViewController.resultsAreOpen.set(ViewController.resultsAreOpen.get() + 1)
                     imageToShow = uiImage
                     resultsToSend = results
