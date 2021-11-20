@@ -2,13 +2,13 @@ import Foundation
 import UIKit
 import Vision
 
-class ResultView: UIViewController {
+class ResultsView: UIViewController {
 	// Outlets
-	@IBOutlet weak var photoView: UIImageView!
-	@IBOutlet weak var descriptionTextView: UITextView!
-	@IBOutlet weak var resultLabel: UILabel!
-
-	// Variables
+    
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var photoView: UIImageView!
+    // Variables
 	var image: UIImage!
 	var results: [VNClassificationObservation]!
 

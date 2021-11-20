@@ -17,8 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZE-fE-Kmj">
-                                <rect key="frame" x="183" y="764" width="49" height="56"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RLA-ib-eth" userLabel="PreviewView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="896" id="69N-v4-hhV"/>
+                                    <constraint firstAttribute="width" constant="414" id="Yin-vr-cBA"/>
+                                </constraints>
+                            </view>
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZE-fE-Kmj">
+                                <rect key="frame" x="182" y="416" width="49" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7ZE-fE-Kmj" secondAttribute="height" id="fut-LE-5Jm"/>
                                 </constraints>
@@ -35,12 +43,9 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="7ZE-fE-Kmj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Dra-Y4-ar1"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7ZE-fE-Kmj" secondAttribute="bottom" id="Qbu-eV-Ctf"/>
-                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="previewView" destination="RLA-ib-eth" id="Rrc-z1-9Ni"/>
                         <outlet property="shutterButton" destination="7ZE-fE-Kmj" id="5XM-xp-Amb"/>
                         <segue destination="9TI-Ne-jwm" kind="show" identifier="PresentResult" id="VQd-Mn-Cvl"/>
                     </connections>
@@ -52,24 +57,40 @@
         <!--Results View-->
         <scene sceneID="Eve-0X-uwI">
             <objects>
-                <viewController id="9TI-Ne-jwm" customClass="ResultsView" sceneMemberID="viewController">
+                <viewController id="9TI-Ne-jwm" customClass="ResultsView" customModule="Hackathon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6XC-Gq-a0t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Butthole" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZOD-R2-8l5">
-                                <rect key="frame" x="20" y="295" width="374" height="478"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZOD-R2-8l5">
+                                <rect key="frame" x="20" y="360" width="374" height="413"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nhb-bh-cm9">
+                                <rect key="frame" x="0.0" y="20" width="414" height="213"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmK-g3-Qd7">
+                                <rect key="frame" x="86" y="278" width="243" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KwE-To-PV3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="kCf-fW-f2z"/>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="ZOD-R2-8l5" id="IDO-rf-jLg"/>
+                        <outlet property="photoView" destination="Nhb-bh-cm9" id="RzL-2L-OaZ"/>
+                        <outlet property="resultLabel" destination="nmK-g3-Qd7" id="cwf-zD-MeD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wNV-mU-jw2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
