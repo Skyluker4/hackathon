@@ -25,7 +25,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCapture
     @IBOutlet weak var previewView: UIView!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     
-    private let videoOutput = AVCaptureVideoDataOutput()
+    private var videoOutput: AVCaptureVideoDataOutput!
 
     
     // Stuff for the AI data
@@ -57,6 +57,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCapture
     
     // Setup auto capturing
     private func addVideoOutput() {
+        videoOutput = AVCaptureVideoDataOutput()
         self.videoOutput.videoSettings = [(kCVPixelBufferPixelFormatTypeKey as NSString) : NSNumber(value: kCVPixelFormatType_32BGRA)] as [String : Any]
         self.videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "my.image.handling.queue"))
         self.captureSession!.addOutput(self.videoOutput)
@@ -90,6 +91,9 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCapture
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
+        previewLayer.session?.stopRunning()
+        videoPreviewLayer.session?.stopRunning()
+        
         // Stop the camera
         if captureSession != nil {
             captureSession!.stopRunning()

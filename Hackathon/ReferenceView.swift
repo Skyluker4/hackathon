@@ -42,6 +42,11 @@ class ReferenceView : UITableViewController {
         // Return formatted cell
         return cell
     }
+    
+    // Handle input
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 // Class for each individual contact cell

@@ -13,10 +13,11 @@
         <scene sceneID="k1g-eM-Qmw">
             <objects>
                 <tabBarController id="Doh-Xu-xSX" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mNM-IZ-Cfj">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="mNM-IZ-Cfj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="0.76599733643457391" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="5PG-9r-haw"/>
@@ -27,12 +28,12 @@
             </objects>
             <point key="canvasLocation" x="-1712" y="-258"/>
         </scene>
-        <!--Item-->
+        <!--Reference-->
         <scene sceneID="ldv-7R-LcE">
             <objects>
-                <tableViewController id="GmU-kM-Ulh" customClass="ReferenceView" customModule="Hackathon" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="GmU-kM-Ulh" userLabel="Reference" customClass="ReferenceView" customModule="Hackathon" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Qep-1Q-9NW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -77,7 +78,7 @@
                             <outlet property="delegate" destination="GmU-kM-Ulh" id="jIh-Rf-R23"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="Ui0-SN-etX"/>
+                    <tabBarItem key="tabBarItem" title="Reference" image="book.fill" catalog="system" id="Ui0-SN-etX"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H11-me-LUw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -88,11 +89,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" userLabel="Scan" customClass="ViewController" customModule="Hackathon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RLA-ib-eth" userLabel="PreviewView">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZE-fE-Kmj">
@@ -116,14 +117,14 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="top" secondItem="RLA-ib-eth" secondAttribute="top" id="CQC-Rd-W7o"/>
-                            <constraint firstItem="RLA-ib-eth" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="QqV-54-YTd"/>
+                            <constraint firstItem="RLA-ib-eth" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="QqV-54-YTd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7ZE-fE-Kmj" secondAttribute="bottom" id="YJ0-HA-t18"/>
                             <constraint firstAttribute="trailing" secondItem="RLA-ib-eth" secondAttribute="trailing" id="Yxs-SQ-WFt"/>
                             <constraint firstItem="7ZE-fE-Kmj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ZOW-Am-eAt"/>
                             <constraint firstAttribute="leading" secondItem="RLA-ib-eth" secondAttribute="leading" id="iQ4-mv-zhk"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="lyM-Pb-d19"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="camera.fill" catalog="system" id="lyM-Pb-d19"/>
                     <connections>
                         <outlet property="previewView" destination="RLA-ib-eth" id="Rrc-z1-9Ni"/>
                         <outlet property="shutterButton" destination="7ZE-fE-Kmj" id="5XM-xp-Amb"/>
@@ -235,10 +236,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wNV-mU-jw2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834.78260869565224" y="95.758928571428569"/>
+            <point key="canvasLocation" x="965" y="-105"/>
         </scene>
     </scenes>
     <resources>
+        <image name="book.fill" catalog="system" width="128" height="95"/>
+        <image name="camera.fill" catalog="system" width="128" height="94"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="square.fill" catalog="system" width="128" height="114"/>
         <systemColor name="labelColor">
