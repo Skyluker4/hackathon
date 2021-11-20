@@ -17,6 +17,9 @@
 		55F4DB3F2748A97F001C400B /* HackathonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4DB3E2748A97F001C400B /* HackathonTests.swift */; };
 		55F4DB492748A97F001C400B /* HackathonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4DB482748A97F001C400B /* HackathonUITests.swift */; };
 		55F4DB4B2748A97F001C400B /* HackathonUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4DB4A2748A97F001C400B /* HackathonUITestsLaunchTests.swift */; };
+		55F4DB592748B743001C400B /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4DB582748B743001C400B /* Sign.swift */; };
+		55F4DB5B2748C524001C400B /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F4DB5A2748C524001C400B /* ResultsView.swift */; };
+		55F4DB5F2748E0C6001C400B /* SignModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 55F4DB5E2748E0C6001C400B /* SignModel.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,9 @@
 		55F4DB482748A97F001C400B /* HackathonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackathonUITests.swift; sourceTree = "<group>"; };
 		55F4DB4A2748A97F001C400B /* HackathonUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackathonUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		55F4DB572748AA49001C400B /* Hackathon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Hackathon.entitlements; sourceTree = "<group>"; };
+		55F4DB582748B743001C400B /* Sign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
+		55F4DB5A2748C524001C400B /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
+		55F4DB5E2748E0C6001C400B /* SignModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SignModel.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,9 @@
 				55F4DB322748A97F001C400B /* LaunchScreen.storyboard */,
 				55F4DB352748A97F001C400B /* Info.plist */,
 				55F4DB2D2748A97E001C400B /* Hackathon.xcdatamodeld */,
+				55F4DB5E2748E0C6001C400B /* SignModel.mlmodel */,
+				55F4DB582748B743001C400B /* Sign.swift */,
+				55F4DB5A2748C524001C400B /* ResultsView.swift */,
 			);
 			path = Hackathon;
 			sourceTree = "<group>";
@@ -264,9 +273,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				55F4DB292748A97E001C400B /* ViewController.swift in Sources */,
+				55F4DB5B2748C524001C400B /* ResultsView.swift in Sources */,
+				55F4DB592748B743001C400B /* Sign.swift in Sources */,
 				55F4DB252748A97E001C400B /* AppDelegate.swift in Sources */,
 				55F4DB272748A97E001C400B /* SceneDelegate.swift in Sources */,
 				55F4DB2F2748A97E001C400B /* Hackathon.xcdatamodeld in Sources */,
+				55F4DB5F2748E0C6001C400B /* SignModel.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
