@@ -1,0 +1,18 @@
+{
+  "Outputs" : {
+    "model_output" : {
+      "MLFeatureShortDescription" : ""
+    },
+    "classLabel" : {
+      "MLFeatureShortDescription" : ""
+    }
+  },
+  "Inputs" : {
+    "data" : {
+      "MLFeatureShortDescription" : ""
+    }
+  },
+  "TrainingInputs" : {
+
+  }
+}
