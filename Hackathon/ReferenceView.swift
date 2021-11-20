@@ -9,11 +9,6 @@ import Foundation
 import UIKit
 
 class ReferenceView : UITableViewController {
-    // Actions
-    @IBAction func categoryChanged(_ sender: Any) {
-        tableView.reloadData()
-    }
-
     // Functions
     // Set up the view controller
     override func viewDidLoad() {
@@ -23,6 +18,8 @@ class ReferenceView : UITableViewController {
         tableView.dataSource = self
     }
 
+    var row: Int!
+    
     // Table View
     // Get how many cells to create; based on how many items in menu
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,8 +40,28 @@ class ReferenceView : UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Result
+        if segue.destination is TableView {
+            let vc = segue.destination as? TableView
+            vc?.image = UIImage(named: Sign.Signs[row].id)
+            vc?.title = Sign.Signs[row].title
+            vc?.signDescription = Sign.Signs[row].description
+            vc?.danger = Sign.Signs[row].danger
+                vc?.quit = false
+            
+        }
+    
+    }
+    
     // Handle input
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        row = indexPath.row
+        
+        performSegue(withIdentifier: "TableResultSeg", sender: self)
+
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
