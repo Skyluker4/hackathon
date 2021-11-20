@@ -89,20 +89,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wnz-t5-bv9" userLabel="DangerBar">
                                 <rect key="frame" x="20" y="273" width="374" height="50"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ult-Ja-H9N" userLabel="Red" colorLabel="IBBuiltInLabel-Red">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ult-Ja-H9N" userLabel="Green" colorLabel="IBBuiltInLabel-Red">
                                         <rect key="frame" x="0.0" y="0.0" width="124.5" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfb-SG-JPg" userLabel="Yellow">
                                         <rect key="frame" x="124.5" y="0.0" width="125" height="50"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJK-US-S2q" userLabel="Green">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJK-US-S2q" userLabel="Red">
                                         <rect key="frame" x="249.5" y="0.0" width="124.5" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ndL-z4-Of8" userLabel="IndicatorBar">
-                                        <rect key="frame" x="180" y="1" width="15" height="50"/>
+                                        <rect key="frame" x="0.0" y="1" width="15" height="50"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="15" id="i4s-gi-a6n"/>
@@ -111,6 +111,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="ndL-z4-Of8" firstAttribute="centerX" secondItem="wnz-t5-bv9" secondAttribute="leading" constant="7.5" id="4Vb-Uz-p22"/>
                                     <constraint firstAttribute="bottom" secondItem="jfb-SG-JPg" secondAttribute="bottom" id="CEl-81-urW"/>
                                     <constraint firstItem="jfb-SG-JPg" firstAttribute="leading" secondItem="ult-Ja-H9N" secondAttribute="trailing" id="IA9-gy-PC7"/>
                                     <constraint firstItem="PJK-US-S2q" firstAttribute="top" secondItem="wnz-t5-bv9" secondAttribute="top" id="IeU-B4-OUx"/>
@@ -126,7 +127,6 @@
                                     <constraint firstAttribute="height" constant="50" id="tqy-Fg-fSt" userLabel="height = 50"/>
                                     <constraint firstItem="jfb-SG-JPg" firstAttribute="top" secondItem="wnz-t5-bv9" secondAttribute="top" id="tzf-I6-aCg"/>
                                     <constraint firstItem="jfb-SG-JPg" firstAttribute="width" secondItem="wnz-t5-bv9" secondAttribute="width" multiplier="1/3" id="u4g-na-10j"/>
-                                    <constraint firstItem="ndL-z4-Of8" firstAttribute="centerX" secondItem="wnz-t5-bv9" secondAttribute="centerX" id="v54-lq-vL5"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -150,10 +150,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="kCf-fW-f2z"/>
                     <connections>
+                        <outlet property="dangerBar" destination="wnz-t5-bv9" id="hTJ-Wf-Dhr"/>
                         <outlet property="descriptionTextView" destination="ZOD-R2-8l5" id="IDO-rf-jLg"/>
                         <outlet property="photoView" destination="Nhb-bh-cm9" id="RzL-2L-OaZ"/>
                         <outlet property="resultLabel" destination="nmK-g3-Qd7" id="cwf-zD-MeD"/>
                         <outlet property="sliderBar" destination="ndL-z4-Of8" id="SKJ-JI-jRZ"/>
+                        <outlet property="sliderBarConstraint" destination="4Vb-Uz-p22" id="su4-IR-s1t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wNV-mU-jw2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

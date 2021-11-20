@@ -70,10 +70,9 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCapture
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         if(!ViewController.resultsAreOpen){
             guard CMSampleBufferGetImageBuffer(sampleBuffer) != nil else {
-                debugPrint("unable to get image from sample buffer")
+                print("unable to get image from sample buffer")
                 return
             }
-            print("did receive image frame")
             
             // process image here
             let imageBuffer = sampleBuffer.imageBuffer
