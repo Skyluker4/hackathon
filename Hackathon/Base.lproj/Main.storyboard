@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Doh-Xu-xSX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -9,10 +9,84 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="k1g-eM-Qmw">
+            <objects>
+                <tabBarController id="Doh-Xu-xSX" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mNM-IZ-Cfj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="5PG-9r-haw"/>
+                        <segue destination="GmU-kM-Ulh" kind="relationship" relationship="viewControllers" id="gzh-3J-BtE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iaZ-tm-7px" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1712" y="-258"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="ldv-7R-LcE">
+            <objects>
+                <tableViewController id="GmU-kM-Ulh" customClass="ReferenceView" customModule="Hackathon" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Qep-1Q-9NW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="signCell" id="inU-Ak-ypU" customClass="SignCell" customModule="Hackathon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="103"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="inU-Ak-ypU" id="11c-0X-Mv4">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="103"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GS6-jz-fyy">
+                                            <rect key="frame" x="358" y="0.0" width="42" height="121"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cxQ-uG-0q6">
+                                            <rect key="frame" x="20" y="2" width="100.5" height="100.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="100" id="92O-1U-1fY"/>
+                                                <constraint firstAttribute="width" secondItem="cxQ-uG-0q6" secondAttribute="height" multiplier="1:1" id="TVK-n1-V9k"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="GS6-jz-fyy" firstAttribute="top" secondItem="11c-0X-Mv4" secondAttribute="top" id="1X0-kk-Y44"/>
+                                        <constraint firstItem="cxQ-uG-0q6" firstAttribute="top" secondItem="11c-0X-Mv4" secondAttribute="top" constant="2" id="9CG-VG-f8O"/>
+                                        <constraint firstAttribute="bottom" secondItem="cxQ-uG-0q6" secondAttribute="bottom" constant="0.5" id="Kvg-z5-hQM"/>
+                                        <constraint firstAttribute="bottom" secondItem="GS6-jz-fyy" secondAttribute="bottom" constant="-18" id="bkF-Qt-hMh"/>
+                                        <constraint firstItem="cxQ-uG-0q6" firstAttribute="leading" secondItem="11c-0X-Mv4" secondAttribute="leading" constant="20" symbolic="YES" id="oCD-CM-qKc"/>
+                                        <constraint firstAttribute="trailing" secondItem="GS6-jz-fyy" secondAttribute="trailing" constant="14" id="xpg-qr-5PI"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellImage" destination="cxQ-uG-0q6" id="c5d-S5-ZLc"/>
+                                    <outlet property="name" destination="GS6-jz-fyy" id="HcS-7w-Wy2"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GmU-kM-Ulh" id="QrA-Nf-YIH"/>
+                            <outlet property="delegate" destination="GmU-kM-Ulh" id="jIh-Rf-R23"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="Ui0-SN-etX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H11-me-LUw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-210.1449275362319" y="-763.39285714285711"/>
+        </scene>
+        <!--Scan-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Hackathon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Scan" customClass="ViewController" customModule="Hackathon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,7 +96,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
                             <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZE-fE-Kmj">
-                                <rect key="frame" x="155.5" y="758.5" width="103.5" height="103.5"/>
+                                <rect key="frame" x="155.5" y="709.5" width="103.5" height="103.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="103.5" id="Q9v-NG-qUb" userLabel="height = 100"/>
                                     <constraint firstAttribute="width" secondItem="7ZE-fE-Kmj" secondAttribute="height" id="fut-LE-5Jm"/>
@@ -49,6 +123,7 @@
                             <constraint firstAttribute="leading" secondItem="RLA-ib-eth" secondAttribute="leading" id="iQ4-mv-zhk"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="lyM-Pb-d19"/>
                     <connections>
                         <outlet property="previewView" destination="RLA-ib-eth" id="Rrc-z1-9Ni"/>
                         <outlet property="shutterButton" destination="7ZE-fE-Kmj" id="5XM-xp-Amb"/>
