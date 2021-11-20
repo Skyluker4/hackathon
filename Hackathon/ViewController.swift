@@ -14,7 +14,6 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCapture
     //Buttons
     //Capture Session
 
-    @IBOutlet weak var previewView: UIView!
     var captureSession: AVCaptureSession?
     //Photo Output
     let output = AVCapturePhotoOutput()
@@ -23,7 +22,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCapture
     //Shutter Button
     var stillImageOutput: AVCapturePhotoOutput!
     @IBOutlet weak var shutterButton: UIButton!
-
+    @IBOutlet weak var previewView: UIView!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
     
     private let videoOutput = AVCaptureVideoDataOutput()
@@ -95,9 +94,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCapture
 
     }
     
-    override func viewDidLoad() {
-        
-    }
+    
 
     
     @IBAction func buttonPressed(_ sender: Any) {
@@ -110,8 +107,6 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate, AVCapture
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         previewLayer.frame = view.bounds
-        
-        shutterButton.center = CGPoint(x: view.frame.size.width/2, y: view.frame.size.height - 200)
     }
     
     private func checkCameraPermissions() {
