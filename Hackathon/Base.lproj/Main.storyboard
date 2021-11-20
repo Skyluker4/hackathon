@@ -26,12 +26,12 @@
                                 </constraints>
                             </view>
                             <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ZE-fE-Kmj">
-                                <rect key="frame" x="182" y="416" width="49" height="56"/>
+                                <rect key="frame" x="155" y="700" width="103.5" height="103.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7ZE-fE-Kmj" secondAttribute="height" id="fut-LE-5Jm"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="">
+                                <buttonConfiguration key="configuration" style="plain" imagePlacement="top" title="" imagePadding="0.0">
                                     <imageReference key="image" image="circle.fill" catalog="system" symbolScale="large"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="48" scale="default" weight="black"/>
                                     <color key="baseForegroundColor" systemColor="systemRedColor"/>
@@ -81,6 +81,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yEw-ge-aqL">
+                                <rect key="frame" x="99" y="340" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KwE-To-PV3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
